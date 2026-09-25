@@ -146,7 +146,7 @@ export class AgentRuntimeEngine {
         extracted.missing_information.includes('invalid_prompt_injection_attempt')
       ) {
         execution = await this.execRepo.updateStatus(tenantId, execution.id, 'ESCALATED', {
-          error_message: `Escalated: ${extracted.questions.join(', ') || 'Low confidence or prohibited inquiry'}`,
+          error_message: `Escalated: ${extracted.questions?.join(', ') || 'Low confidence or prohibited inquiry'}`,
         });
 
         await this.auditRepo.append({
