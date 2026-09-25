@@ -7,7 +7,7 @@ export interface PromptTemplate {
   version: string;
   name: string;
   description: string;
-  template: (vars: Record<string, any>) => string;
+  template: (vars: any) => string;
 }
 
 export const PROMPT_REGISTRY: Record<string, PromptTemplate> = {
