@@ -1,0 +1,24 @@
+{
+  "name": "smb-agent-os",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SMB-Agent-OS — Multi-tenant, human-supervised AI operating system for SMBs",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run --workspaces --if-present build",
+    "test": "npm run --workspaces --if-present test",
+    "lint": "npm run --workspaces --if-present lint",
+    "dev:api": "npm run --workspace=apps/api dev",
+    "dev:worker": "npm run --workspace=apps/worker dev",
+    "dev:web": "npm run --workspace=apps/web dev",
+    "test:all": "npm test",
+    "eval": "npm run --workspace=apps/api test:eval"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.4.5"
+  }
+}
